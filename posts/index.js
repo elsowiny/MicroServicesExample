@@ -1,11 +1,15 @@
 const express = require('express');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
+
+
+const { postsData } = require('./PostsData');
+const posts = postsData;
 
 const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json()) // To parse the incoming requests with JSON payloads
-
-const posts = {};
+app.use(cors());
 
 app.get('/posts', (req, res) => {
     res.send(posts);

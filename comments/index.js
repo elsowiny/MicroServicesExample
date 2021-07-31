@@ -1,11 +1,17 @@
 const express = require('express');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json()) // To parse the incoming requests with JSON payloads
-
+app.use(cors());
 const commentsByPostId = {};
+
+
+app.get('/', (req, res) => {
+    res.send('Hello World! Server is running');
+});
 
 
 app.get('/posts/:id/comments', (req, res) => {
