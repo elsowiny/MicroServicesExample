@@ -7,7 +7,7 @@ export default function PostList() {
     const [posts, setPosts] = useState({});
 
     const fetchPosts = async () => {
-        const response = await axios.get('http://localhost:4000/posts');
+        const response = await axios.get('http://localhost:4002/posts');
         setPosts(response.data);
     };
 
@@ -15,7 +15,6 @@ export default function PostList() {
         fetchPosts();
     }, []);
 
-    console.log(posts);
     const renderedPosts = Object.values(posts);
     return (
         <div className="d-flex flex-row flex-wrap justify-content-between">
@@ -28,7 +27,7 @@ export default function PostList() {
 
                                 <div className="card-body">
                                     <h3>{post.title}</h3>
-                                    <CommentList postId={post.id}/>
+                                    <CommentList comments={post.comments}/>
                                     <CommentCreate postId={post.id}/>
                                 </div>
                                 
