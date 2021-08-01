@@ -7,6 +7,7 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 
 app.post('/events', (req, res) => {
+    console.log("Event recieved: ", req.body.type);
     const event = req.body;
 
     axios.post('http://localhost:4000/events', event);
