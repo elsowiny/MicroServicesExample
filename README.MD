@@ -19,4 +19,9 @@ type of event, and payload over to listeners that are subscribed.
 In the subscribers of this event and data, is also a query service that handles
 merging data and sending/recieving to the front end. 
 
-If a service were to fail, the application will continue working without dependency on another.
+If a service were to fail, the application will continue working without dependency on another
+
+![Independent Services](./repo_img/microservices.png "Independent services running")
+<br>
+<br>
+![Client](./repo_img/client.png "Client React App")
