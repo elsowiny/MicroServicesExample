@@ -10,9 +10,18 @@ app.post('/events', (req, res) => {
     console.log("Event recieved: ", req.body.type);
     const event = req.body;
 
-    axios.post('http://localhost:4000/events', event);
-    axios.post('http://localhost:4001/events', event);
-    axios.post('http://localhost:4002/events', event);
+    axios.post('http://localhost:4000/events', event).catch((err) => {
+        console.log(err.message);
+      });
+    axios.post('http://localhost:4001/events', event).catch((err) => {
+        console.log(err.message);
+      });
+    axios.post('http://localhost:4002/events', event).catch((err) => {
+        console.log(err.message);
+      });
+    axios.post('http://localhost:4003/events', event).catch((err) => {
+        console.log(err.message);
+      });
 
     res.send({status: 'Ok'});
 });
