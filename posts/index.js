@@ -41,5 +41,6 @@ app.post('/events',  (req, res) => {
 });
 
 app.listen(4000, () => {
+    console.log('v3');
     console.log('Server is running on 4000');
 } );
